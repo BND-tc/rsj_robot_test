@@ -18,8 +18,8 @@ public:
     {
         ros::NodeHandle nh("~");
         pub_twist = nh.advertise<geometry_msgs::Twist>(
-                    "/ypspur_ros/cmd_vel", 5);
-        sub_odom = nh.subscribe("/ypspur_ros/odom", 5,
+                    "/cmd_vel", 5);
+        sub_odom = nh.subscribe("/odom", 5,
                                 &rsj_robot_test_node::cb_odom, this);
     }
     void mainloop()
