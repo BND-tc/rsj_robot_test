@@ -8,7 +8,6 @@ class RsjRobotTestNode
 {
 private:
   ros::NodeHandle nh_;
-  ros::NodeHandle pnh_;
 
   ros::Subscriber sub_odom_;
   ros::Publisher pub_twist_;
@@ -20,7 +19,6 @@ private:
 public:
   RsjRobotTestNode()
     : nh_()
-    , pnh_("~")
   {
     pub_twist_ = nh_.advertise<geometry_msgs::Twist>(
         "cmd_vel", 5);
